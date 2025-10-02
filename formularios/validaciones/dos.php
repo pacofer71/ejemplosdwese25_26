@@ -1,17 +1,5 @@
 <?php
-$provincias = [
-    'Almeria',
-    'Cadiz',
-    'Cordoba',
-    'Granada',
-    'Huelva',
-    'Jaen',
-    'Malaga',
-    'Sevilla',
-    'Madrid'
-];
-$aficiones = ['Cine', 'Deportes', 'Lectura', 'Videojuegos', 'Programacion', 'Otras'];
-$colores = ['Rojo', 'Verde', 'Azul', 'Blanco', 'Negro', 'Otros'];
+    include 'datos.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
