@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "validaciones.php";
+require __DIR__."/utils/validaciones.php"; //require "./utils/validaciones.php"
 if (isset($_POST['password'])) {
     //procesaremos el formulario, si esta variable existe es pq hemos enviado el formulario
     //1.- Recogemos y saneamos
@@ -17,9 +17,11 @@ if (isset($_POST['password'])) {
     //Si errores=false no he tenido ningun error,proceso los datos
 
     if (!$errores) {
-        if (loginValido($email, $password)) {
+        $perfil=loginValido($email, $password);
+        if ($perfil!=-1) {
             $_SESSION['user'] = $email;
-            header("Location:admin.php");
+            $_SESSION['perfil']=$perfil;
+            header("Location:sitio.php");
             die();
         }
     }

@@ -2,9 +2,17 @@
     session_start();
     if(!isset($_SESSION['user'])){
         header("Location:login.php");
-        die;
+        die();
     }
     $email=$_SESSION['user'];
+    $perfil=$_SESSION['perfil'];
+    $datos=match($perfil){
+        0=>["bg-teal-200", "Esta información para los usuarios normales"],
+        1=>["bg-blue-200","Esta información para los usuarios de Gestión ."],
+        2=>["bg-red-200", "Esta información super chunga solo la podrá ver el administrador!!!! "],
+        default=>""
+    };
+   
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -19,11 +27,17 @@
     <title>Document</title>
 </head>
 
-<body class="bg-teal-200 px-8">
-    <h2 class="my-4 text-center text-xl">Página de administración</h2>
-    <input type="text" value="<?= $email ?>" class="py-2 px-1 border-1 border-gray-400 rounded-lg" readonly>
-    <a href="cerrar.php" class="p-2 text-white font-bold rounded-lg bg-red-600 hover:bg-red-800">
+<body class="<?= $datos[0] ?> px-8">
+    <h2 class="my-4 text-center text-xl">Página del Sitio</h2>
+    <input type="text" value="<?= $email.", ".$perfil ?>" class="py-2 px-1 border-1 border-gray-400 rounded-lg" readonly>
+    <a href="./utils/cerrar.php" class="p-2 text-white font-bold rounded-lg bg-red-600 hover:bg-red-800">
        <i class="fa-solid fa-right-from-bracket mr-2"></i>Salir
     </a>
+    <div>
+        <p>
+            <?= $datos[1] ?>   
+        </p>
+    </div>
+   
 </body>
 </html>
