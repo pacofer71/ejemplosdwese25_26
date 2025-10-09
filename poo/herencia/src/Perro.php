@@ -8,6 +8,7 @@ Class Perro extends Animal{
         ($continente==null) ? parent::__construct() : parent::__construct($continente);
         
         $this->raza=$raza; 
+        
     }
 
     public function sonido(): string{
