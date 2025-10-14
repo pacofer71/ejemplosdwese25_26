@@ -1,0 +1,17 @@
+{
+    "name": "pacofer71/apipelis",
+    "description": "Ejemplo Consumo Api Pelis",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "pacofer71",
+            "email": "pacofer71@gmail.com"
+        }
+    ],
+    "require": {}
+}
