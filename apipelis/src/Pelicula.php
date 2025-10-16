@@ -8,7 +8,7 @@ class Pelicula{
         public string $titulo,
         public string $resumen,
         public float $puntuacion,
-        string $nombre #
+        string $nombre // diferente al resto
     )
     {
         $this->poster=IMAGE_URL."$nombre";

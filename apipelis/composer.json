@@ -13,5 +13,7 @@
             "email": "pacofer71@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "guzzlehttp/guzzle": "^7.10"
+    }
 }
